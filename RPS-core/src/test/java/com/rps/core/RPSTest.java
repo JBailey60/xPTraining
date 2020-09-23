@@ -1,12 +1,9 @@
 package com.rps.core;
 
-<<<<<<< HEAD
 import org.junit.Assert;
 import org.junit.Test;
-=======
 import org.junit.Test;
 import org.junit.Assert;
->>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
 
 import static com.rps.core.Outcome.*;
 import static com.rps.core.Throw.*;
@@ -14,8 +11,6 @@ import static com.rps.core.Throw.*;
 public class RPSTest {
 
     @Test
-<<<<<<< HEAD
-=======
     public void player1Wins(){
         Assert.assertEquals(P1_WINS, RPS.play(ROCK, SCISSORS));
         Assert.assertEquals(P1_WINS, RPS.play(PAPER, ROCK));
@@ -49,7 +44,6 @@ public class RPSTest {
     }
 
     /*@Test
->>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
     public void player1Rock_player2Paper_player2Wins() {
         Assert.assertEquals(P2_WINS, RPS.play(ROCK, PAPER));
     }
@@ -95,7 +89,6 @@ public class RPSTest {
     }
 
     @Test
-<<<<<<< HEAD
     public void player1Spock_player2Spock_tie() {
         Assert.assertEquals(TIE, RPS.play(SPOCK, SPOCK));
     }
@@ -106,8 +99,6 @@ public class RPSTest {
     }
 
     @Test
-=======
->>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
     public void player1Rock_player2Spock_player2Wins() {
         Assert.assertEquals(P2_WINS, RPS.play(ROCK, SPOCK));
     }
@@ -155,7 +146,6 @@ public class RPSTest {
     @Test
     public void player1Spock_player2Lizard_player2Wins() {
         Assert.assertEquals(P2_WINS, RPS.play(SPOCK, LIZARD));
-<<<<<<< HEAD
     }
 
     @Test
@@ -182,4 +172,3 @@ public class RPSTest {
 =======
     }*/
 }
->>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
