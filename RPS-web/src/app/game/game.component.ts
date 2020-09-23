@@ -72,6 +72,7 @@ export class GameComponent implements OnInit, OnDestroy {
     this.rankedGameRequest = new PlayGameRequest(this.getValue('selectedPlayer1'), this.getValue('selectedPlayer2'), this.getValue('player1Throw'), this.getValue('player2Throw'));
 
     this.gameGateway.playGame(this.rankedGameRequest).pipe(takeUntil(this._destroy)).subscribe(gameResult => {
+<<<<<<< HEAD
       // this.mostRecentOutcome = gameResult.outcome;
       if (gameResult.outcome == 'P1_WINS') {
         //this.mostRecentOutcome = this.getValue('selectedPlayer1').name + ' Wins';
@@ -85,6 +86,16 @@ export class GameComponent implements OnInit, OnDestroy {
       
       this.mostRecentOutcome = gameResult.outcome;
 
+=======
+      //this.mostRecentOutcome = gameResult.outcome;
+      if (gameResult.outcome == 'P1_WINS'){
+        this.mostRecentOutcome = this.getValue('player1Name')
+      } else if (gameResult.outcome == 'P2_WINS'){
+        this.mostRecentOutcome = this.playerList[2].name;
+      }else{
+        this.mostRecentOutcome = gameResult.outcome;
+      }
+>>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
     });
   }
 

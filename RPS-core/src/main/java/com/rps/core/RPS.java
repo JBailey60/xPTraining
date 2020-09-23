@@ -11,15 +11,26 @@ public class RPS {
             return TIE;
         }
 
+<<<<<<< HEAD
         if(     (p1 == LIZARD && (p2 == ROCK || p2 == SCISSORS)) ||
                 (p1 == PAPER && (p2 == SCISSORS || p2 == LIZARD)) ||
                 (p1 == ROCK && (p2 == PAPER || p2 == SPOCK)) ||
                 (p1 == SCISSORS && (p2 == ROCK || p2 == SPOCK)) ||
                 (p1 == SPOCK && (p2 == PAPER || p2 == LIZARD)))
+=======
+        if ((p1 == PAPER && (p2 == SCISSORS || p2 == LIZARD)) ||
+            (p1 == ROCK && (p2 == PAPER || p2 == SPOCK)) ||
+            (p1 == SCISSORS && (p2 == ROCK || p2 == SPOCK)) ||
+            (p1 == SPOCK && (p2 == PAPER || p2 == LIZARD)))
+>>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
         {
             return P2_WINS;
         }
 
         return P1_WINS;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9

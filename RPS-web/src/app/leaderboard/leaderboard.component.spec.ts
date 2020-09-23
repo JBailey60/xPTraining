@@ -16,7 +16,7 @@ describe('LeaderboardComponent', () => {
     stubRpsGateway = new StubGameGateway();
 
     TestBed.configureTestingModule({
-      declarations: [ LeaderboardComponent ],
+      declarations: [LeaderboardComponent],
       imports: [
         BrowserAnimationsModule,
         FormsModule
@@ -25,7 +25,7 @@ describe('LeaderboardComponent', () => {
         { provide: GameGateway, useValue: stubRpsGateway }
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -38,7 +38,7 @@ describe('LeaderboardComponent', () => {
   it('should create leaderboard with data', () => {
     expect(component).toBeTruthy();
     let tableRows = fixture.nativeElement.querySelectorAll('tr');
-    console.log( 'tableRows: ', tableRows );
+    console.log('tableRows: ', tableRows);
     // Data rows
     let row1 = tableRows[1];
     expect(row1.cells[1].innerHTML).toBe('100');
@@ -69,14 +69,14 @@ describe('LeaderboardComponent', () => {
       expect(row1.cells[1].innerHTML).toBe('WON');
       expect(row1.cells[2].innerHTML).toBe('ROCK');
       expect(row1.cells[3].innerHTML).toBe('SCISSORS');
-      
+
     });
   });
 
   it('should refresh leaderboard with data', () => {
     expect(component).toBeTruthy();
     let tableRows = fixture.nativeElement.querySelectorAll('tr');
-    console.log( 'tableRows: ', tableRows );
+    console.log('tableRows: ', tableRows);
     // Data rows
     let row1 = tableRows[1];
     expect(row1.cells[1].innerHTML).toBe('100');
@@ -97,7 +97,7 @@ describe('LeaderboardComponent', () => {
       expect(row1.cells[1].innerHTML).toBe('95');
       expect(row1.cells[3].innerHTML).toBe('11');
       expect(row1.cells[6].innerHTML).toBe('80');
-      
+
     });
   });
 
@@ -120,8 +120,15 @@ describe('LeaderboardComponent', () => {
       expect(row1.cells[6].innerHTML).toBe('80.33');
       expect(row1.cells[7].innerHTML).toBe('33.33');
       expect(row1.cells[8].innerHTML).toBe('50.11');
+<<<<<<< HEAD
       
     });
   });
 
 });
+=======
+
+    });
+  });
+});
+>>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9

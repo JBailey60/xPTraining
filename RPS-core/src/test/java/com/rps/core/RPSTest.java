@@ -1,7 +1,12 @@
 package com.rps.core;
 
+<<<<<<< HEAD
 import org.junit.Assert;
 import org.junit.Test;
+=======
+import org.junit.Test;
+import org.junit.Assert;
+>>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
 
 import static com.rps.core.Outcome.*;
 import static com.rps.core.Throw.*;
@@ -9,6 +14,42 @@ import static com.rps.core.Throw.*;
 public class RPSTest {
 
     @Test
+<<<<<<< HEAD
+=======
+    public void player1Wins(){
+        Assert.assertEquals(P1_WINS, RPS.play(ROCK, SCISSORS));
+        Assert.assertEquals(P1_WINS, RPS.play(PAPER, ROCK));
+        Assert.assertEquals(P1_WINS, RPS.play(SCISSORS, PAPER));
+        Assert.assertEquals(P1_WINS, RPS.play(ROCK, LIZARD));
+        Assert.assertEquals(P1_WINS, RPS.play(PAPER, SPOCK));
+        Assert.assertEquals(P1_WINS, RPS.play(SCISSORS, LIZARD));
+        Assert.assertEquals(P1_WINS, RPS.play(SPOCK, ROCK));
+        Assert.assertEquals(P1_WINS, RPS.play(SPOCK, SCISSORS));
+    }
+
+    @Test
+    public void player2Wins(){
+        Assert.assertEquals(P2_WINS, RPS.play(ROCK, PAPER));
+        Assert.assertEquals(P2_WINS, RPS.play(PAPER, SCISSORS));
+        Assert.assertEquals(P2_WINS, RPS.play(SCISSORS, ROCK));
+        Assert.assertEquals(P2_WINS, RPS.play(ROCK, SPOCK));
+        Assert.assertEquals(P2_WINS, RPS.play(PAPER, LIZARD));
+        Assert.assertEquals(P2_WINS, RPS.play(SCISSORS, SPOCK));
+        Assert.assertEquals(P2_WINS, RPS.play(SPOCK, PAPER));
+        Assert.assertEquals(P2_WINS, RPS.play(SPOCK, LIZARD));
+    }
+
+    @Test
+    public void Tie(){
+        Assert.assertEquals(TIE, RPS.play(SCISSORS, SCISSORS));
+        Assert.assertEquals(TIE, RPS.play(PAPER, PAPER));
+        Assert.assertEquals(TIE, RPS.play(ROCK, ROCK));
+        Assert.assertEquals(TIE, RPS.play(LIZARD,LIZARD));
+        Assert.assertEquals(TIE, RPS.play(SPOCK,SPOCK));
+    }
+
+    /*@Test
+>>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
     public void player1Rock_player2Paper_player2Wins() {
         Assert.assertEquals(P2_WINS, RPS.play(ROCK, PAPER));
     }
@@ -54,6 +95,7 @@ public class RPSTest {
     }
 
     @Test
+<<<<<<< HEAD
     public void player1Spock_player2Spock_tie() {
         Assert.assertEquals(TIE, RPS.play(SPOCK, SPOCK));
     }
@@ -64,6 +106,8 @@ public class RPSTest {
     }
 
     @Test
+=======
+>>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
     public void player1Rock_player2Spock_player2Wins() {
         Assert.assertEquals(P2_WINS, RPS.play(ROCK, SPOCK));
     }
@@ -111,6 +155,7 @@ public class RPSTest {
     @Test
     public void player1Spock_player2Lizard_player2Wins() {
         Assert.assertEquals(P2_WINS, RPS.play(SPOCK, LIZARD));
+<<<<<<< HEAD
     }
 
     @Test
@@ -134,3 +179,7 @@ public class RPSTest {
     }
 
 }
+=======
+    }*/
+}
+>>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9

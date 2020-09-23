@@ -19,7 +19,17 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+<<<<<<< HEAD
             <version>RELEASE</version>
+=======
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+>>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
             <scope>test</scope>
         </dependency>
     </dependencies>
