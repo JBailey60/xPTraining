@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { GameComponent } from './game/game.component';
+import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'leaderboard', pathMatch: "full" },
     { path: 'leaderboard', component: LeaderboardComponent },
+    { path: 'leaderboard/:id', component: DetailsComponent },
     { path: 'play', component: GameComponent },
     { path: '**', component: LeaderboardComponent },
 ];

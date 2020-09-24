@@ -11,7 +11,6 @@
   .tg .tg-wt0f{font-weight:bold;font-size:15px;font-family:"Trebuchet MS", Helvetica, sans-serif !important;;text-align:left;vertical-align:middle}
   </style>
   
-  <ng-container *ngIf="selectedPlayer === -1">
     <table class="tg">
       <tr>
         <th class="tg-w3z3">Player</th>
@@ -26,7 +25,7 @@
       </tr>
       <ng-container >
         <tr *ngFor="let playerStat of playerStats"  >
-          <td> <button id="{{'button_' + playerStat.player.id }}" (click)="showPlayer( playerStat.player.id )" > {{playerStat.player.name}} </button>   </td>
+          <td> <button id="{{'button_' + playerStat.player.id }}" [routerLink] = "'/leaderboard/' + playerStat.player.id" > {{playerStat.player.name}} </button>   </td>
           <td class="ps-winpercent-{{playerStat.player.id}}" >{{playerStat.winPercentage | number:'1.0-2' }}</td>
           <td>{{playerStat.gamesPlayed}}</td>
           <td>{{playerStat.gamesWon}}</td>
@@ -40,29 +39,4 @@
       
     </table>
     <button class="refresh" (click)="getPlayerStats()" >Refresh</button>
-</ng-container>
-
-<ng-container *ngIf="selectedPlayer != -1 && gameRecords.length > 0">
-  <h2 id="title">{{gameRecords[1].player.name}}</h2>
-  <table class="tg">
-    <tr>
-      <th class="tg-w3z3">Opponent</th>
-      <th class="tg-w3z3">Result</th>
-      <th class="tg-w3z3">Player Throw</th>
-      <th class="tg-w3z3">Opponent Throw</th>
-    </tr>
-    <ng-container >
-      <tr *ngFor="let gameRecord of gameRecords"  >
-        <td>{{gameRecord.opponent.name}}</td>
-        <td>{{gameRecord.result}}</td>
-        <td>{{gameRecord.playerThrow}}</td>
-        <td>{{gameRecord.opponentThrow}}</td>
-      </tr>
-    </ng-container>
-    
-  </table>
-  <button (click)="showPlayer(-1)" >Back</button>
-</ng-container>
 </div>
-
-
