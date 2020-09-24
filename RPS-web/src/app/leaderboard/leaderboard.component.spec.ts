@@ -121,7 +121,7 @@ describe('LeaderboardComponent', () => {
       expect(row1.cells[6].innerHTML).toBe('80.33');
       expect(row1.cells[7].innerHTML).toBe('33.33');
       expect(row1.cells[8].innerHTML).toBe('50.11');
-      
+
     });
   });
 
@@ -131,5 +131,7 @@ describe('LeaderboardComponent', () => {
     let title = fixture.nativeElement.querySelector('#title')
     expect(title.innerHTML).toBe('Player 1');
   });
+
+  
 
 });
