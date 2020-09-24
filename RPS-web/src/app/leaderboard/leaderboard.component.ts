@@ -48,12 +48,9 @@ export class LeaderboardComponent implements OnInit {
   getGameRecords(){
     this.gameRecords = [];
     this.gameGateway.getPlayerGameRecords( this.selectedPlayer).subscribe(returnedGameRecords => {
-      for(let i = 0; i < returnedGameRecords.length; i++) {
-        this.gameRecords.push(returnedGameRecords[i]);
-      }
-      // this.playerList = this.playerList.sort((a,b) => a.name.localeCompare(b.name));
+      this.gameRecords = returnedGameRecords;
+      });
       console.log('got player game records', this.gameRecords);
-    });
-  }
+    }
 
 }
