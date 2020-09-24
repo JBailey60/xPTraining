@@ -125,14 +125,17 @@ describe('LeaderboardComponent', () => {
     });
   });
 
-  it("Will show players name on detailed page", () => {
-    const details = fixture.nativeElement.querySelector('.details');
-    details.click();
-    let title = fixture.nativeElement.querySelector('#title')
-    setTimeout(function(){ expect(title.innerHTML).toBe('Player 1'); }, 1000);
-    
+  it("should show players name on detailed page", () => {
+    let button = fixture.nativeElement.querySelector('#button_2');
+    console.log(button);
+    button.click();
+        
+    fixture.whenStable().then(() => {  
+      fixture.detectChanges();
+      let title = fixture.nativeElement.querySelector('h2#title');
+      expect(title.innerHTML).toBe('Player 1')
+      console.log(title);
+      
+    });
   });
-
-  
-
-});
+})
