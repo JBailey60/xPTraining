@@ -29,8 +29,6 @@ export class GameComponent implements OnInit, OnDestroy {
 
   gameForm: FormGroup;
 
-  winningMessage: string;
-
   constructor(private gameGateway: GameGateway, private fb: FormBuilder) {
 
   }
@@ -72,27 +70,7 @@ export class GameComponent implements OnInit, OnDestroy {
     this.rankedGameRequest = new PlayGameRequest(this.getValue('selectedPlayer1'), this.getValue('selectedPlayer2'), this.getValue('player1Throw'), this.getValue('player2Throw'));
 
     this.gameGateway.playGame(this.rankedGameRequest).pipe(takeUntil(this._destroy)).subscribe(gameResult => {
-      // this.mostRecentOutcome = gameResult.outcome;
-      if (gameResult.outcome == 'P1_WINS') {
-        //this.mostRecentOutcome = this.getValue('selectedPlayer1').name + ' Wins';
-        this.winningMessage = this.getValue('selectedPlayer1').name + ' Wins';
-      } else if (gameResult.outcome == 'P2_WINS') {
-        //this.mostRecentOutcome = this.getValue('selectedPlayer2').name + ' Wins';
-        this.winningMessage = this.getValue('selectedPlayer2').name + ' Wins';
-      } else {
-        this.winningMessage = this.getValue('selectedPlayer1').name + ' and ' + this.getValue('selectedPlayer2').name + ' Tie!'
-      }
-      
       this.mostRecentOutcome = gameResult.outcome;
-
-      //this.mostRecentOutcome = gameResult.outcome;
-      if (gameResult.outcome == 'P1_WINS'){
-        this.mostRecentOutcome = this.getValue('player1Name')
-      } else if (gameResult.outcome == 'P2_WINS'){
-        this.mostRecentOutcome = this.playerList[2].name;
-      }else{
-        this.mostRecentOutcome = gameResult.outcome;
-      }
     });
   }
 
@@ -102,19 +80,12 @@ export class GameComponent implements OnInit, OnDestroy {
     this.practiceGameRequest = new PlayPracticeGameRequest(this.getValue('player1Throw'), this.getValue('player2Throw'));
 
     this.gameGateway.playPracticeGame(this.practiceGameRequest).subscribe(gameResult => {
-      if(gameResult.outcome == 'P1_WINS') {
-        this.winningMessage = 'Player 1 Wins!';
-      } else if (gameResult.outcome == 'P2_WINS') {
-        this.winningMessage = 'Player 2 Wins!';
-      } else {
-        this.winningMessage = 'Player 1 and Player 2 Tied!'
-      }
+      this.mostRecentOutcome = gameResult.outcome;
     });
   }
 
   flipToggle() {
     this.isPracticeGame = !this.isPracticeGame;
-    this.clear();
     this.updateValidator();
   }
 
@@ -143,10 +114,4 @@ export class GameComponent implements OnInit, OnDestroy {
       console.log('got players', this.playerList);
     })
   }
-
-  clear() {
-    this.winningMessage = '';
-    this.mostRecentOutcome = '';
-  }
-
 }

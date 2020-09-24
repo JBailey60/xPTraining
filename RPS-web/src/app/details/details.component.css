@@ -8,19 +8,12 @@
 table{
     margin: auto;
 }
-
-.high{
+.WON {
+    background-color: green;
+}
+.LOSS {
     background-color: red;
 }
-
-.midhigh{
-    background-color: orange;
-}
-
-.midlow{
+.TIE {
     background-color: lightblue;
-}
-
-.low{
-    background-color: blue;
 }

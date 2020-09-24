@@ -121,7 +121,7 @@ describe('GameComponent', () => {
       expect(stubRpsGateway.playGameCalledWith.player2Throw).toBe('ROCK');
       expect(stubRpsGateway.playGameCalledWith.player2.name).toBe('Player 3');
       expect(stubRpsGateway.playGameCalledWith.player2.id).toBe(3);
-      //expect(fixture.nativeElement.querySelector('#game-outcome').innerHTML).toContain(stubRpsGateway.stubOutcome);
+      expect(fixture.nativeElement.querySelector('#game-outcome').innerHTML).toContain(stubRpsGateway.stubOutcome);
     });
   }));
 
@@ -154,26 +154,5 @@ describe('GameComponent', () => {
     const submitPracticeFlipped = fixture.nativeElement.querySelector('#submit-practice');
     expect(submitPracticeFlipped.disabled).toBeTruthy();
     expect(submitRankedFlipped).toBeFalsy();
-  });
-
-  it('should display player name instead of P1_WINS, P2_WINS, or TIE',  async(() => {
-    component.ngOnInit();
-    component.isPracticeGame = false;
-    fixture.detectChanges();
-    triggerMatSelect('player1Throw', 3);
-    triggerMatSelect('player1Name', 0);
-
-    triggerMatSelect('player2Throw', 1);
-    triggerMatSelect('player2Name', 2);
-
-    const submit = fixture.nativeElement.querySelector('#submit-ranked');
-    submit.click();
-
-    fixture.whenStable().then(() => {
-      fixture.detectChanges();
-
-      expect(fixture.nativeElement.querySelector('#game-outcome').innerHTML).toBe(stubRpsGateway.playGameCalledWith.player2.name + ' Wins');
-    });
-  }));
-
+  })
 });
