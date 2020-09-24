@@ -126,10 +126,11 @@ describe('LeaderboardComponent', () => {
   });
 
   it("Will show players name on detailed page", () => {
-    const player = fixture.nativeElement.querySelector('player0');
-    player.click();
+    const details = fixture.nativeElement.querySelector('.details');
+    details.click();
     let title = fixture.nativeElement.querySelector('#title')
-    expect(title.innerHTML).toBe('Player 1');
+    setTimeout(function(){ expect(title.innerHTML).toBe('Player 1'); }, 1000);
+    
   });
 
   
