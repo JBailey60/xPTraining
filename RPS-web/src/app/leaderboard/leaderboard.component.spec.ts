@@ -6,6 +6,7 @@ import { GameGateway } from '../game/game.gateway';
 import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { title } from 'process';
 
 describe('LeaderboardComponent', () => {
   let component: LeaderboardComponent;
@@ -120,15 +121,15 @@ describe('LeaderboardComponent', () => {
       expect(row1.cells[6].innerHTML).toBe('80.33');
       expect(row1.cells[7].innerHTML).toBe('33.33');
       expect(row1.cells[8].innerHTML).toBe('50.11');
-<<<<<<< HEAD
       
     });
   });
 
-});
-=======
-
-    });
+  it("Will show players name on detailed page", () => {
+    const player = fixture.nativeElement.querySelector('player0');
+    player.click();
+    let title = fixture.nativeElement.querySelector('#title')
+    expect(title.innerHTML).toBe('Player 1');
   });
+
 });
->>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
