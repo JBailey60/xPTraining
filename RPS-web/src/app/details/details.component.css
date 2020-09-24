@@ -8,3 +8,12 @@
 table{
     margin: auto;
 }
+.WON {
+    background-color: green;
+}
+.LOSS {
+    background-color: red;
+}
+.TIE {
+    background-color: lightblue;
+}

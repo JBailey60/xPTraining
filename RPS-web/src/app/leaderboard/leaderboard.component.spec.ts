@@ -138,4 +138,9 @@ describe('LeaderboardComponent', () => {
       
   //   });
   // });
+
+  it("should change the percentage color based on percentage value", () => {
+    
+  });
+
 })
