@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from './header/header.component';
     GameComponent,
     LeaderboardComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

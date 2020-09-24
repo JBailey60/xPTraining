@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { async } from '@angular/core/testing';
+import { Observable } from 'rxjs';
 import { PlayerStat, GameRecord } from '../game/game';
 import { GameGateway } from '../game/game.gateway';
 
@@ -55,5 +57,5 @@ export class LeaderboardComponent implements OnInit {
       console.log('got player game records', this.gameRecords);
     });
   }
-
+  
 }

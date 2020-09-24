@@ -120,15 +120,46 @@ describe('LeaderboardComponent', () => {
       expect(row1.cells[6].innerHTML).toBe('80.33');
       expect(row1.cells[7].innerHTML).toBe('33.33');
       expect(row1.cells[8].innerHTML).toBe('50.11');
-<<<<<<< HEAD
       
     });
   });
 
-});
-=======
+  it('should show player name on detailed page', () => {
 
-    });
+    fixture.nativeElement.querySelector('button.refresh').click();
+
+      let button = fixture.nativeElement.querySelector('#button_2');
+      console.log(button);
+
+      button.click();
+
+      fixture.whenStable().then(() => {
+        fixture.detectChanges();
+        let title = fixture.nativeElement.querySelector('h2#title');
+
+        expect(title.innerHTML).toBe('player_2');
+
+        console.log(title);
+      });
+
+      // let title = fixture.nativeElement.querySelector('h2.title');
+      // let title = 'THIS TITLE';
+
+      // setTimeout(function(){
+        
+      
+      //   expect(title).toBe('chees');
+      //   console.log(title);
+      // }, 1000);
+
+      // console.log(title);
+    
   });
+
+  // it('should display colored game results', () => {
+
+  //   fixture.nativeElement.querySelector('#button_2').click();
+
+  // });
+
 });
->>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9

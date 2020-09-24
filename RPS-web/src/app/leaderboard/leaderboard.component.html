@@ -25,8 +25,7 @@
       </tr>
       <ng-container >
         <tr *ngFor="let playerStat of playerStats"  >
-          <td> <button (click)="showPlayer( playerStat.player.id )" > {{playerStat.player.name}} </button>   </td>
-<<<<<<< HEAD
+          <td> <button id="{{ 'button_' + playerStat.player.id }}" (click)="showPlayer( playerStat.player.id )" > {{playerStat.player.name}} </button>   </td>
           <td class="ps-winpercent-{{playerStat.player.id}}" >{{playerStat.winPercentage | number:'1.0-2' }}</td>
           <td>{{playerStat.gamesPlayed}}</td>
           <td>{{playerStat.gamesWon}}</td>
@@ -35,16 +34,6 @@
           <td>{{playerStat.rockPercent | number:'1.0-2'}}</td>
           <td>{{playerStat.paperPercent | number:'1.0-2'}}</td>
           <td>{{playerStat.scissorsPercent | number:'1.0-2'}}</td>
-=======
-          <td class="ps-winpercent-{{playerStat.player.id}}" >{{playerStat.winPercentage | number: '1.0-2'}}</td>
-          <td>{{playerStat.gamesPlayed}}</td>
-          <td>{{playerStat.gamesWon}}</td>
-          <td>{{playerStat.gamesLost}}</td>
-          <td>{{playerStat.gamesTies}}</td>
-          <td>{{playerStat.rockPercent | number: '1.0-2'}}</td>
-          <td>{{playerStat.paperPercent | number: '1.0-2'}}</td>
-          <td>{{playerStat.scissorsPercent | number: '1.0-2'}}</td>
->>>>>>> 70ce41ccc206a8b3e81db81534df80fa9f6038c9
         </tr>
       </ng-container>
       
@@ -52,7 +41,8 @@
     <button class="refresh" (click)="getPlayerStats()" >Refresh</button>
 </ng-container>
 
-<ng-container *ngIf="selectedPlayer != -1">
+<ng-container *ngIf="selectedPlayer != -1 && gameRecords.length > 0">
+  <h2 id='title'>{{gameRecords[0].player.name}}</h2>
   <table class="tg">
     <tr>
       <th class="tg-w3z3">Opponent</th>
