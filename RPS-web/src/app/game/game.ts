@@ -84,6 +84,7 @@ export class GameRecord {
     public opponent: Player,
     public result: Result,
     public playerThrow: Throw,
-    public opponentThrow: Throw
+    public opponentThrow: Throw,
+    public datePlayed: String
   ) {}
 }

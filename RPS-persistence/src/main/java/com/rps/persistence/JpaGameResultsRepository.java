@@ -29,8 +29,12 @@ public interface JpaGameResultsRepository extends Repository<JpaGameResultsRepos
         @Enumerated(EnumType.STRING)
         public Throw player2Throw;
 
+
         public int player1Id;
         public int player2Id;
+
+
+        public String datePlayed;
 
         public GameResultJpaEntity(GameResult gameResult ){
             this.gameResultId = gameResult.getGameResultId();
@@ -39,6 +43,7 @@ public interface JpaGameResultsRepository extends Repository<JpaGameResultsRepos
             this.player2Id = gameResult.getPlayer2().getId();
             this.player1Throw = gameResult.getPlayer1Throw();
             this.player2Throw = gameResult.getPlayer2Throw();
+            this.datePlayed = gameResult.getDatePlayed();
         }
 
         public GameResult toDomainObject( String player1Name, String player2Name ){
@@ -46,7 +51,7 @@ public interface JpaGameResultsRepository extends Repository<JpaGameResultsRepos
                     new Player( player1Name, player1Id ),
                     new Player( player2Name, player2Id ),
                     outcome,
-                    player1Throw, player2Throw, gameResultId
+                    player1Throw, player2Throw, gameResultId, datePlayed
             );
         }
 
@@ -55,7 +60,7 @@ public interface JpaGameResultsRepository extends Repository<JpaGameResultsRepos
                     new Player( playerRepository.findById(player1Id).getName(), player1Id ),
                     new Player( playerRepository.findById(player2Id).getName(), player2Id ),
                     outcome,
-                    player1Throw, player2Throw, gameResultId
+                    player1Throw, player2Throw, gameResultId, datePlayed
             );
         }
 

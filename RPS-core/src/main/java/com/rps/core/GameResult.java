@@ -8,14 +8,16 @@ public class GameResult {
     private Throw player1Throw;
     private Throw player2Throw;
     private int gameResultId;
+    private String datePlayed;
 
-    public GameResult(Player player1, Player player2, Outcome outcome, Throw player1Throw, Throw player2Throw, int gameResultId) {
+    public GameResult(Player player1, Player player2, Outcome outcome, Throw player1Throw, Throw player2Throw, int gameResultId, String datePlayed) {
         this.player1 = player1;
         this.player2 = player2;
         this.outcome = outcome;
         this.player1Throw = player1Throw;
         this.player2Throw = player2Throw;
         this.gameResultId = gameResultId;
+        this.datePlayed = datePlayed;
     }
 
     public GameResult(GameResult gameResult) {
@@ -99,5 +101,13 @@ public class GameResult {
                 ", outcome=" + outcome +
                 ", gameResultId=" + gameResultId +
                 '}';
+    }
+
+    public String getDatePlayed() {
+        return datePlayed;
+    }
+
+    public void setDatePlayed(String datePlayed) {
+        this.datePlayed = datePlayed;
     }
 }

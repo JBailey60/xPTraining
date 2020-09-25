@@ -18,7 +18,11 @@ public class DefaultCreateGameResultUseCase implements CreateGameResultUseCase {
                         request.player1,
                         request.player2,
                         RPS.play( request.player1Throw, request.player2Throw),
-                        request.player1Throw, request.player2Throw, gameResultIdProvider.getId() )
+                        request.player1Throw,
+                        request.player2Throw,
+                        gameResultIdProvider.getId(),
+                        request.datePlayed
+                        )
         );
     }
 }

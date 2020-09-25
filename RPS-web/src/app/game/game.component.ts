@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
@@ -10,7 +11,8 @@ import { GameGateway, PlayGameRequest, PlayPracticeGameRequest } from './game.ga
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  styleUrls: ['./game.component.css'],
+  providers: [DatePipe]
 })
 export class GameComponent implements OnInit, OnDestroy {
   
@@ -30,7 +32,7 @@ export class GameComponent implements OnInit, OnDestroy {
 
   winningMessage: string;
 
-  constructor(private gameGateway: GameGateway, private fb: FormBuilder) {
+  constructor(private gameGateway: GameGateway, private fb: FormBuilder, private datePipe: DatePipe) {
 
   }
 
@@ -51,6 +53,9 @@ export class GameComponent implements OnInit, OnDestroy {
     // })
     this.updateValidator();
 
+    console.log((new Date()).toDateString());
+    console.log((new Date()).toString());
+
   }
 
   createForm() {
@@ -68,7 +73,7 @@ export class GameComponent implements OnInit, OnDestroy {
 
   processRankedGame() {
     this.mostRecentOutcome = '';
-    this.rankedGameRequest = new PlayGameRequest(this.getValue('selectedPlayer1'), this.getValue('selectedPlayer2'), this.getValue('player1Throw'), this.getValue('player2Throw'));
+    this.rankedGameRequest = new PlayGameRequest(this.getValue('selectedPlayer1'), this.getValue('selectedPlayer2'), this.getValue('player1Throw'), this.getValue('player2Throw'), "Puppies");
 
     this.gameGateway.playGame(this.rankedGameRequest).pipe(takeUntil(this._destroy)).subscribe(gameResult => {
       // this.mostRecentOutcome = gameResult.outcome;
@@ -83,6 +88,8 @@ export class GameComponent implements OnInit, OnDestroy {
       }
       
       this.mostRecentOutcome = gameResult.outcome;
+
+      console.log(gameResult.);
 
       //this.mostRecentOutcome = gameResult.outcome;
       if (gameResult.outcome == 'P1_WINS'){

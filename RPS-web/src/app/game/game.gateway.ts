@@ -1,5 +1,6 @@
-import { Throw, Outcome, Player, GameResult, PlayerStat, GameRecord } from './game';
 import { Observable } from 'rxjs';
+
+import { GameRecord, GameResult, Outcome, Player, PlayerStat, Throw } from './game';
 
 export abstract class GameGateway {
   abstract playPracticeGame(request: PlayPracticeGameRequest ): Observable<PlayPracticeGameResponse>;
@@ -27,7 +28,8 @@ export class PlayGameRequest {
     public player1: Player,
     public player2: Player,
     public player1Throw: Throw,
-    public player2Throw: Throw
+    public player2Throw: Throw,
+    public datePlayed: String
   ) {}
   
 

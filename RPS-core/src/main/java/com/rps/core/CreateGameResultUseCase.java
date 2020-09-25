@@ -9,14 +9,16 @@ public interface CreateGameResultUseCase {
         public Player player2;
         public Throw player1Throw;
         public Throw player2Throw;
+        public String datePlayed;
 
         public Request(){}
 
-        public Request(Player player1, Player player2, Throw player1Throw, Throw player2Throw) {
+        public Request(Player player1, Player player2, Throw player1Throw, Throw player2Throw, String datePlayed) {
             this.player1 = player1;
             this.player2 = player2;
             this.player1Throw = player1Throw;
             this.player2Throw = player2Throw;
+            this.datePlayed = datePlayed;
         }
     }
 }

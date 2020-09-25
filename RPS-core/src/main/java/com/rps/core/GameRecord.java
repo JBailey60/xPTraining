@@ -1,5 +1,7 @@
 package com.rps.core;
 
+import java.sql.Date;
+
 public class GameRecord {
 
     private int gameResultId;
@@ -8,16 +10,18 @@ public class GameRecord {
     private Result result;
     private Throw playerThrow;
     private Throw opponentThrow;
+    private String gameDate;
 
     public static enum Result { WON, LOSS, TIE }
 
-    public GameRecord(int gameResultId, Player player, Player opponent, Result result, Throw playerThrow, Throw opponentThrow) {
+    public GameRecord(int gameResultId, Player player, Player opponent, Result result, Throw playerThrow, Throw opponentThrow, String gameDate) {
         this.gameResultId = gameResultId;
         this.player = player;
         this.opponent = opponent;
         this.result = result;
         this.playerThrow = playerThrow;
         this.opponentThrow = opponentThrow;
+        this.gameDate = gameDate;
     }
 
     public GameRecord(int playerId, GameResult gameResult ){

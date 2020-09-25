@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.sql.Date;
 import java.util.List;
 
 import static com.rps.core.GameRecord.Result.*;
@@ -114,10 +115,10 @@ public class RpsRestControllerTest {
         stubbedPlayerStatsUseCaseResponse.add( new PlayerStat( player2, 6, 2, 2, 2, 4, 4, 1, 2));
         stubbedPlayerStatsUseCaseResponse.add( new PlayerStat( player3, 2, 4, 4, 3, 3, 4, 4, 1));
         stubbedGetPlayerGameRecordsUseCaseResponse = Config.stubGetPlayerGameRecordsUseCase.stubbedGetPlayerGameRecordsUseCase;
-        stubbedGetPlayerGameRecordsUseCaseResponse.add( new GameRecord( 1, player1, player2, WON, ROCK, SCISSORS ));
-        stubbedGetPlayerGameRecordsUseCaseResponse.add( new GameRecord( 2, player1, player3, LOSS, ROCK, PAPER ));
-        stubbedGetPlayerGameRecordsUseCaseResponse.add( new GameRecord( 3, player1, player4, GameRecord.Result.TIE, ROCK, ROCK ));
-        stubbedGetPlayerGameRecordsUseCaseResponse.add( new GameRecord( 4, player1, player2, WON, SCISSORS, PAPER ));
+        stubbedGetPlayerGameRecordsUseCaseResponse.add( new GameRecord( 1, player1, player2, WON, ROCK, SCISSORS, "2014, 02, 11"));
+        stubbedGetPlayerGameRecordsUseCaseResponse.add( new GameRecord( 2, player1, player3, LOSS, ROCK, PAPER, "2000, 05, 10"));
+        stubbedGetPlayerGameRecordsUseCaseResponse.add( new GameRecord( 3, player1, player4, GameRecord.Result.TIE, ROCK, ROCK, "THIS DATE"));
+        stubbedGetPlayerGameRecordsUseCaseResponse.add( new GameRecord( 4, player1, player2, WON, SCISSORS, PAPER, "1930, 06, 27"));
 
         mvc = MockMvcBuilders
                 .webAppContextSetup(context)

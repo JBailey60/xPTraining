@@ -4,5 +4,6 @@ CREATE TABLE GAME_RESULTS(
     player1Name varchar(255) not null,
     player1Id varchar(255) not null,
     player2Name varchar(255) not null,
-    player2Id varchar(255) not null
+    player2Id varchar(255) not null,
+    datePlayed varchar(255) --not null
 );
