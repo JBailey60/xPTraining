@@ -1,7 +1,7 @@
 <div class="leaderboard-container">
-<p>
+<h1>
   LEADER BOARD
-</p>
+</h1>
 
 <style type="text/css">
   .tg  {border-collapse:collapse;border-spacing:0;}
@@ -25,7 +25,7 @@
       </tr>
       <ng-container >
         <tr *ngFor="let playerStat of playerStats"  >
-          <td> <button id="{{'button_' + playerStat.player.id }}" (click)="showPlayer( playerStat.player.id )" > {{playerStat.player.name}} </button>   </td>
+          <td> <button id="{{'button_' + playerStat.player.id }}" [routerLink] = "'/leaderboard/' + playerStat.player.id" > {{playerStat.player.name}} </button>   </td>
           <td class="ps-winpercent-{{playerStat.player.id}}" >{{playerStat.winPercentage | number:'1.0-2' }}</td>
           <td>{{playerStat.gamesPlayed}}</td>
           <td>{{playerStat.gamesWon}}</td>

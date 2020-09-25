@@ -1,11 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Player, Throw, throwLocalization } from './game';
-import { HttpGameGateway } from './http.game.gateway';
-import { PlayGameRequest, PlayPracticeGameRequest, GameGateway } from './game.gateway';
-import { MatDialog } from '@angular/material';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { takeUntil } from 'rxjs/operators';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
+import { Player, Throw, throwLocalization } from './game';
+import { GameGateway, PlayGameRequest, PlayPracticeGameRequest } from './game.gateway';
 
 
 @Component({
@@ -147,6 +146,24 @@ export class GameComponent implements OnInit, OnDestroy {
   clear() {
     this.winningMessage = '';
     this.mostRecentOutcome = '';
+  }
+
+  validPlayerChoice(): boolean{
+    var player1;
+    var player2;
+
+    if (this.gameForm.get('selectedPlayer1').value != null && this.gameForm.get('selectedPlayer2').value) {
+      player1 = this.gameForm.get('selectedPlayer1').value.name;
+      player2 = this.gameForm.get('selectedPlayer2').value.name;
+    }
+
+    if (player1 === player2) {
+      return false;
+    } else{
+      return this.gameForm.valid;
+    }
+    
+    
   }
 
 }

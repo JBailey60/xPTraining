@@ -1,14 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { GameComponent } from './game.component';
-import { MaterialModule } from '../../material.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { StubGameGateway } from './stub.game.gateway';
-import { GameGateway } from './game.gateway';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MaterialModule } from '../../material.module';
 import { Outcome } from './game';
+import { GameComponent } from './game.component';
+import { GameGateway } from './game.gateway';
+import { StubGameGateway } from './stub.game.gateway';
 
 describe('GameComponent', () => {
   let component: GameComponent;
@@ -175,5 +175,17 @@ describe('GameComponent', () => {
       expect(fixture.nativeElement.querySelector('#game-outcome').innerHTML).toBe(stubRpsGateway.playGameCalledWith.player2.name + ' Wins');
     });
   }));
+
+  it('should not let you submit a game where the players are the same', () =>{
+    triggerMatSelect('player1Throw', 3);
+    triggerMatSelect('player1Name', 0);
+
+    triggerMatSelect('player2Throw', 3);
+    triggerMatSelect('player2Name', 0);
+
+    const submit = fixture.nativeElement.querySelector('#submit-ranked');
+    expect(submit.disabled).toBe(true);
+    
+  })
 
 });
