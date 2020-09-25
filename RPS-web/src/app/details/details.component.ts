@@ -1,15 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+
+import { GameRecord } from '../game/game';
+import { GameGateway } from '../game/game.gateway';
+
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent implements OnInit{
 
-  constructor() { }
+  gameRecords$: Observable<GameRecord[]>;
+  
+  constructor(private router: ActivatedRoute, private gameGateway: GameGateway) { }
 
   ngOnInit() {
+    this.router.snapshot.paramMap.get('id');
+    this.getGameRecords(this.router.snapshot.paramMap.get('id'));
+  }
+
+  getGameRecords(id: string){
+    this.gameRecords$ = this.gameGateway.getPlayerGameRecords(parseInt(id, 10));
   }
 
 }
