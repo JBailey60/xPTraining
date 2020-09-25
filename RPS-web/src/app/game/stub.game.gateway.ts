@@ -10,9 +10,9 @@ export class StubGameGateway implements GameGateway {
   playerStats: PlayerStat[] = [];
 
   constructor(){
-    this.playerStats.push(new PlayerStat(new Player("Player 1",1 ), 10, 0, 0, 10, 100, 10, 0, 0, 100, 0, 0));
-    this.playerStats.push(new PlayerStat(new Player("Player 2",2 ), 6, 2, 2, 10, 70, 5, 2, 3, 50, 20, 30));
-    this.playerStats.push(new PlayerStat(new Player("Player 3",3 ), 2, 4, 4, 10, 40, 2, 1, 7, 20, 10, 70));
+    this.playerStats.push(new PlayerStat(new Player("Player 1",1 ), 10, 0, 0, 10, 100, 10, 0, 0, 3, 3, 100, 0, 0, 0, 0));
+    this.playerStats.push(new PlayerStat(new Player("Player 2",2 ), 6, 2, 2, 10, 70, 5, 2, 3, 2, 4, 50, 20, 30, 50, 20));
+    this.playerStats.push(new PlayerStat(new Player("Player 3",3 ), 2, 4, 4, 10, 40, 2, 1, 7, 4, 2, 20, 10, 70, 60, 40));
   }
 
   playPracticeGame(request: PlayPracticeGameRequest): Observable<PlayPracticeGameResponse> {

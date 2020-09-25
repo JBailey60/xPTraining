@@ -188,4 +188,30 @@ describe('GameComponent', () => {
     
   })
 
+  it('should check for lizard and spock as throw choices',  async(() => {
+    component.ngOnInit();
+    component.isPracticeGame = false;
+    fixture.detectChanges();
+    triggerMatSelect('player1Throw', 4);
+    triggerMatSelect('player1Name', 0);
+
+    triggerMatSelect('player2Throw', 5);
+    triggerMatSelect('player2Name', 2);
+
+    const submit = fixture.nativeElement.querySelector('#submit-ranked');
+    submit.click();
+
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      expect(stubRpsGateway.playGameCalledWith.player1Throw).toBe('SPOCK');
+      expect(stubRpsGateway.playGameCalledWith.player1.name).toBe('Player 1');
+      expect(stubRpsGateway.playGameCalledWith.player1.id).toBe(1);
+
+      expect(stubRpsGateway.playGameCalledWith.player2Throw).toBe('LIZARD');
+      expect(stubRpsGateway.playGameCalledWith.player2.name).toBe('Player 3');
+      expect(stubRpsGateway.playGameCalledWith.player2.id).toBe(3);
+      //expect(fixture.nativeElement.querySelector('#game-outcome').innerHTML).toContain(stubRpsGateway.stubOutcome);
+    });
+  }));
+
 });

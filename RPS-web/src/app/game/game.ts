@@ -8,12 +8,16 @@ export enum Throw {
   Rock = 'ROCK',
   Paper = 'PAPER',
   Scissors = 'SCISSORS',
+  Spock = 'SPOCK',
+  Lizard = 'LIZARD'
 }
 
 export const throwLocalization = {
   [Throw.Rock]: 'Rock',
   [Throw.Paper]: 'Paper',
   [Throw.Scissors]: 'Scissors',
+  [Throw.Spock]: 'Spock',
+  [Throw.Lizard]: 'Lizard'
 };
 
 export enum Outcome {
@@ -62,9 +66,13 @@ export class PlayerStat {
     public rocksThrown: number,
     public papersThrown: number,
     public scissorsThrown: number,
+    public spockThrown: number,
+    public lizardThrown: number,
     public rockPercent: number,
     public paperPercent: number,
-    public scissorsPercent: number
+    public scissorsPercent: number,
+    public spockPercent: number,
+    public lizardPercent: number
   ) {}
 }
 

@@ -158,4 +158,10 @@ describe('LeaderboardComponent', () => {
     });
   });
 
+  it("should show percentage for Spock and Lizard throws", () => {
+    let tableRows = fixture.nativeElement.querySelectorAll('tr');
+    expect(stubRpsGateway.playerStats[0].spockPercent = 54.7).toBeTruthy();
+    expect(stubRpsGateway.playerStats[0].lizardPercent = 23.8).toBeTruthy();
+  });
+
 })
