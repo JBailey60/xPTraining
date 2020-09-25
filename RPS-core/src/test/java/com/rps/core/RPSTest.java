@@ -2,8 +2,6 @@ package com.rps.core;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.Test;
-import org.junit.Assert;
 
 import static com.rps.core.Outcome.*;
 import static com.rps.core.Throw.*;
@@ -43,7 +41,7 @@ public class RPSTest {
         Assert.assertEquals(TIE, RPS.play(SPOCK,SPOCK));
     }
 
-    /*@Test
+    @Test
     public void player1Rock_player2Paper_player2Wins() {
         Assert.assertEquals(P2_WINS, RPS.play(ROCK, PAPER));
     }
@@ -168,7 +166,4 @@ public class RPSTest {
         Assert.assertEquals(P1_WINS, RPS.play(LIZARD, SPOCK));
     }
 
-}
-=======
-    }*/
 }

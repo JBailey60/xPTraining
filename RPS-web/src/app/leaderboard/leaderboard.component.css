@@ -8,3 +8,19 @@
 table{
     margin: auto;
 }
+
+.high{
+    background-color: red;
+}
+
+.midhigh{
+    background-color: orange;
+}
+
+.midlow{
+    background-color: lightblue;
+}
+
+.low{
+    background-color: blue;
+}

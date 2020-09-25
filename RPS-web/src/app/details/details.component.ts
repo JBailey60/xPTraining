@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { GameRecord, PlayerStat } from '../game/game';
+
+import { GameRecord } from '../game/game';
 import { GameGateway } from '../game/game.gateway';
 
 

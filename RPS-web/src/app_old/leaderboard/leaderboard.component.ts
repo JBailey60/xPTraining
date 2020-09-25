@@ -48,20 +48,12 @@ export class LeaderboardComponent implements OnInit {
   getGameRecords(){
     this.gameRecords = [];
     this.gameGateway.getPlayerGameRecords( this.selectedPlayer).subscribe(returnedGameRecords => {
-      this.gameRecords = returnedGameRecords;
-      });
+      for(let i = 0; i < returnedGameRecords.length; i++) {
+        this.gameRecords.push(returnedGameRecords[i]);
+      }
+      // this.playerList = this.playerList.sort((a,b) => a.name.localeCompare(b.name));
       console.log('got player game records', this.gameRecords);
-    }
-
-    getThrowColor(throwPercent: number): String {
-      if(throwPercent >= 85)
-        return "high";
-      else if(throwPercent >= 70)
-        return "midhigh";
-      else if(throwPercent <= 15)
-        return "low";
-      else if(throwPercent <= 30)
-        return "midlow";
-    }
+    });
+  }
 
 }
